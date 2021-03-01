@@ -17,19 +17,19 @@
 </head>
 <body class="bg-white h-screen antialiased leading-none font-sans">
     <div id="app">
-        <section class="px-8 py-4 mb-6">
+        <section class="px-8 py-4">
           <header class="container mx-auto">
             <div class="flex">
               <div>
                 <img
                   src="/images/logo.svg"
                   alt="Tweedle"
+                  width="50"
+                  height="50"
                 >
               </div>
-              <div>
-                <h1>
-                  Tweedle
-                </h1>
+              <div class="flex items-center">
+                <h1>Tweedle</h1>
               </div>
             </div>
           </header>
