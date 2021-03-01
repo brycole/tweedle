@@ -8,6 +8,14 @@ use App\Models\Tweet;
 class TweetsController extends Controller
 {
 
+  public function index()
+  {
+
+      return view('home', [
+        'tweets'=> auth()->user()->timeline()
+      ]);
+  }
+
   public function store()
   {
     $attributes = request()->validate(['body' => 'required|max:255']);
@@ -18,6 +26,6 @@ class TweetsController extends Controller
     ]);
 
 
-    return redirect('/home');
+    return redirect('/index');
   }
 }
