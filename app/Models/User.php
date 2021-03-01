@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+//namespace App\Models\Tweet;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -43,7 +44,16 @@ class User extends Authenticatable
 
     public function timeline()
     {
-      return Tweet::where('user_id', $this->id)->latest()->get();
+      $friends = $this->follows()->pluck('id');
+
+      return Tweet::whereIn('user_id', $friends)
+          ->orWhere('user_id', $this->id)
+          ->latest()->get();
+    }
+
+    public function tweets()
+    {
+      return $this->hasMany(Tweet::class);
     }
 
     public function getAvatarAttribute()
