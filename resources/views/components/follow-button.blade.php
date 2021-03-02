@@ -1,7 +1,7 @@
 
 @if (current_user()->isNot($user))
 
-  <form method="POST" action="/profiles/{{ $user->name }}/follow">
+  <form method="POST" action="/profiles/{{ $user->username }}/follow">
     @csrf
 
     <button type="submit"
