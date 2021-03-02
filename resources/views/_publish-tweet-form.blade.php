@@ -11,7 +11,7 @@
 
     <hr class="my-4">
 
-    <footer class="flex justify-between">
+    <footer class="flex justify-between items-center">
       <img
         src="{{ auth()->user()->avatar }}"
         alt="your avatar"
@@ -20,7 +20,7 @@
         width="50"
       >
 
-      <button type="submit" class="bg-blue-500 rounded-lg shadow py-2 px-2 text-white">Tweedledee!</button>
+      <button type="submit" class="bg-blue-500 hover:bg-blue-600 rounded-lg shadow px-5 py-4 text-sm text-white items-center justify-center">Tweedledee!</button>
 
     </footer>
   </form>

@@ -1,7 +1,7 @@
-@extends('layouts.app')
 
-@section('content')
-<main class="sm:container sm:mx-auto sm:max-w-lg sm:mt-10">
+<x-master>
+
+<main class="sm:container sm:mx-auto sm:max-w-lg">
     <div class="flex">
         <div class="w-full">
             <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg">
@@ -104,4 +104,4 @@
         </div>
     </div>
 </main>
-@endsection
+</x-master>
