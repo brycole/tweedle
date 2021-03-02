@@ -61,7 +61,6 @@
       name="avatar"
       id="avatar"
       value="{{ $user->avatar }}"
-      required
     >
 
     <img src="{{ $user->avatar }}"
