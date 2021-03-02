@@ -21,23 +21,6 @@
       {{ $tweet->body }}
     </p>
 
-    <div class="flex">
-      <div class="flex items-center mr-3">
-        <x-zondicon-thumbs-up class="w-3 text-gray-500 mr-1"/>
-        <!-- <x-zondicon-thumbs-down class="w-6 h-6 text-gray-500"/> -->
-        <span class="text-xs text-gray-500">
-          {{ $tweet-> likes }}
-        </span>
-
-      </div>
-
-      <div class="flex items-center">
-        <x-zondicon-thumbs-down class="w-3 text-gray-500 mr-1"/>
-        <span class="text-xs text-gray-500">
-          {{ $tweet-> dislikes }}
-        </span>
-      </div>
-    </div>
-
+    <x-like-buttons :tweet="$tweet"/>
   </div>
 </div>

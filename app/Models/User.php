@@ -52,7 +52,9 @@ class User extends Authenticatable
 
       return Tweet::whereIn('user_id', $friends)
           ->orWhere('user_id', $this->id)
-          ->latest()->paginate(20);
+          ->withLikes()
+          ->latest()
+          ->paginate(20);
     }
 
     public function tweets()
