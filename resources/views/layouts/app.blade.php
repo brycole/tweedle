@@ -10,10 +10,10 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script defer src="{{ asset('js/app.js') }}" ></script>
 
     <!-- Styles -->
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet" data-turbolinks-track="true">
 </head>
 <body class="bg-white h-screen antialiased leading-none font-sans">
     <div id="app">
@@ -58,6 +58,5 @@
           </main>
         </section>
     </div>
-  <script src="http//unpkg.com/turbolinks"></script>
 </body>
 </html>
