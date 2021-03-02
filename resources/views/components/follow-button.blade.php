@@ -1,5 +1,5 @@
 
-@if (auth()->user()->isNot($user))
+@if (current_user()->isNot($user))
 
   <form method="POST" action="/profiles/{{ $user->name }}/follow">
     @csrf
