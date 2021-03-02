@@ -7,6 +7,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Hash;
 use App\Followable;
 
 class User extends Authenticatable
@@ -68,9 +69,9 @@ class User extends Authenticatable
       return asset('storage/' . $value);
     }
 
-    public function setPasswordAttribute($value)
+    public function setPasswordAttribute($password)
     {
-      $this->attributes['password'] = bcrypt($value);
+      $this->attributes['password'] = Hash::needsRehash($password) ? Hash::make($password) : $password;
     }
 
     public function path($append = '')
