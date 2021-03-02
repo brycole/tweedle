@@ -2,11 +2,31 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\Builder;
+
 use App\Models\Tweet;
 use App\Models\User;
 
 trait Likable
 {
+
+    public function scopeWithLikes(Builder $query)
+    {
+      // postgres specific query
+      $query->leftJoinSub(
+      'select
+        tweet_id,
+        count(liked) filter (where liked = true) as likes,
+        count(liked) filter (where liked = false) as dislikes
+      from likes
+      group by tweet_id',
+      'likes',
+      'likes.tweet_id',
+      'tweets.id'
+    );
+    }
+
+
     public function like($user = null, $liked = true)
     {
       $this->likes()->updateOrCreate(
