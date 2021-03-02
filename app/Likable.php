@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Models\Tweet;
+use App\Models\User;
 
 trait Likable
 {
